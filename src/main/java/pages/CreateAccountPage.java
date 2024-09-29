@@ -16,9 +16,8 @@ public class CreateAccountPage {
     private By createAccountButton = By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button");
 
 
-
-    public CreateAccountPage(WebDriver driver){
-        this.driver=driver;
+    public CreateAccountPage(WebDriver driver) {
+        this.driver = driver;
     }
 
     public void setFirstName(String firstName) {
@@ -41,13 +40,10 @@ public class CreateAccountPage {
         driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
     }
 
-    public  MyAccountPage clickCreateAccountButton(){
-driver.findElement(createAccountButton).click();
-return  new MyAccountPage(driver);
+    public MyAccountPage clickCreateAccountButton() {
+        driver.findElement(createAccountButton).click();
+        return new MyAccountPage(driver);
     }
-
-
-
 
 
 }

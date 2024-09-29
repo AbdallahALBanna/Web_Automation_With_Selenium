@@ -8,11 +8,11 @@ public class MyAccountPage {
     private WebDriver driver;
     private By createAccountSuccessMessage = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div");
 
-    public MyAccountPage(WebDriver driver){
-        this.driver= driver;
+    public MyAccountPage(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public String getAccountSuccessText(){
+    public String getAccountSuccessText() {
         return driver.findElement(createAccountSuccessMessage).getText();
     }
 

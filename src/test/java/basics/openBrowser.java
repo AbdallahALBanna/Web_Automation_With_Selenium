@@ -1,17 +1,17 @@
 package basics;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
+import java.time.Duration;
+
 public class openBrowser {
 
 
-    static WebDriver driver = new ChromeDriver();
+    protected static WebDriver driver = new ChromeDriver();
     protected HomePage homePage;
 
     @BeforeClass
@@ -20,6 +20,7 @@ public class openBrowser {
         driver.get("https://magento.softwaretestingboard.com/");
         homePage = new HomePage(driver);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
 //

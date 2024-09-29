@@ -1,6 +1,9 @@
 # Magento Web Test Automation Project [In Progress]
 
-This project is a web test automation framework for testing the [Magento](https://magento.softwaretestingboard.com/) e-commerce platform using Java, Selenium WebDriver, Cucumber, and the Page Object Model (POM) design pattern. It incorporates TestNG’s `DataProvider` for parameterized testing and is designed to enhance test coverage and identify critical defects early by automating core user workflows.
+This project is a web test automation framework for testing the [Magento](https://magento.softwaretestingboard.com/)
+e-commerce platform using Java, Selenium WebDriver, Cucumber, and the Page Object Model (POM) design pattern. It
+incorporates TestNG’s `DataProvider` for parameterized testing and is designed to enhance test coverage and identify
+critical defects early by automating core user workflows.
 
 ## Technologies Used
 
@@ -15,13 +18,17 @@ This project is a web test automation framework for testing the [Magento](https:
 
 ## Project Overview
 
-This project automates key workflows on a real-world e-commerce website, [Magento](https://magento.softwaretestingboard.com/), to ensure a seamless user experience. The automation includes:
+This project automates key workflows on a real-world e-commerce
+website, [Magento](https://magento.softwaretestingboard.com/), to ensure a seamless user experience. The automation
+includes:
+
 - **Login functionality**
 - **Product search**
 - **Adding products to the cart**
 - **An E2E use case**
 
 ### Core Framework Features:
+
 - **IntelliJ IDEA**: The development environment for building and maintaining the framework.
 - **Maven**: For managing project dependencies and build automation.
 - **Selenium WebDriver**: To interact with web elements and perform browser automation.
@@ -29,9 +36,9 @@ This project automates key workflows on a real-world e-commerce website, [Magent
 - **TestNG DataProvider**: For parameterized, data-driven testing that allows testing multiple data sets.
 - **Cucumber**: For Behavior-Driven Development (BDD) and writing human-readable test cases.
 
-
-
 ### Framework Objective:
-The goal is to create a robust test framework that increases test coverage and helps in early detection of critical defects, providing a maintainable and scalable testing solution.
+
+The goal is to create a robust test framework that increases test coverage and helps in early detection of critical
+defects, providing a maintainable and scalable testing solution.
 
 
