@@ -17,6 +17,9 @@ public class HomePage {
     private By signInSUccessMessage = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
     private By searchTextBox = By.id("search");
 
+    private By productAtHomeElement = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[6]/div/div/strong/a");
+
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -44,6 +47,11 @@ public class HomePage {
     public SearchResultsPage writeTextInSearchBoxAndClickOk() {
         driver.findElement(searchTextBox).sendKeys("Hero Hoodie", Keys.ENTER);
         return new SearchResultsPage(driver);
+    }
+
+    public ProductPage clickProductTitle() {
+        driver.findElement(productAtHomeElement).click();
+        return new ProductPage(driver);
     }
 
 
