@@ -9,17 +9,15 @@ import java.time.Duration;
 
 public class WishListPage {
 
+    public By productAddedToWishListSuccessTest = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
     private WebDriver driver;
 
 
-    public By productAddedToWishListSuccessTest = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
-
-
-    public WishListPage(WebDriver driver){
-        this.driver=driver;
+    public WishListPage(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public String getProductAddedToWishListSuccessText(){
+    public String getProductAddedToWishListSuccessText() {
 
         //Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

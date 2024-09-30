@@ -59,7 +59,6 @@ public class HomePage {
     public WishListPage addMessengerBagToWishlist() {
 
 
-
         WebElement element = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/div/strong/a"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 

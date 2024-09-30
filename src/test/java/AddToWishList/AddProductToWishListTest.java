@@ -12,7 +12,7 @@ public class AddProductToWishListTest extends openBrowser {
 
     @Test
 
-    public void testSuccessfulAddProductToWishList(){
+    public void testSuccessfulAddProductToWishList() {
 
         WishListPage wishListPage = homePage.addMessengerBagToWishlist();
 
@@ -25,8 +25,7 @@ public class AddProductToWishListTest extends openBrowser {
 
         HomePage homePage = signInPage.clickSignInButton();
 
-        assertEquals(wishListPage.getProductAddedToWishListSuccessText(),"Fusion Backpack has been added to your Wish List. Click here to continue shopping.","Wish List Test Fail");
-
+        assertEquals(wishListPage.getProductAddedToWishListSuccessText(), "Fusion Backpack has been added to your Wish List. Click here to continue shopping.", "Wish List Test Fail");
 
 
     }

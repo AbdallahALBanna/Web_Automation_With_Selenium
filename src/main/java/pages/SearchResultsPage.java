@@ -5,14 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchResultsPage {
 
+    public By firstSearchResult = By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[2]/ol/li[1]/div/div/strong/a");
     private WebDriver driver;
 
 
-    public By firstSearchResult = By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[2]/div[2]/ol/li[1]/div/div/strong/a");
-
-
-    public  SearchResultsPage(WebDriver driver){
-        this.driver=driver;
+    public SearchResultsPage(WebDriver driver) {
+        this.driver = driver;
     }
 
     public String getFirstSearchResultText() {

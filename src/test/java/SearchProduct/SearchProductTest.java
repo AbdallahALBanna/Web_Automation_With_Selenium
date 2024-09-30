@@ -11,7 +11,7 @@ public class SearchProductTest extends openBrowser {
 
     @Test
 
-    public void testSuccessfulProductSearch(){
+    public void testSuccessfulProductSearch() {
 
         SearchResultsPage searchResultsPage = homePage.writeTextInSearchBoxAndClickOk();
 
@@ -22,16 +22,7 @@ public class SearchProductTest extends openBrowser {
         driver.findElement(searchResultsPage.firstSearchResult).click();
 
 
-
-
-
-
-
-
     }
-
-
-
 
 
 }

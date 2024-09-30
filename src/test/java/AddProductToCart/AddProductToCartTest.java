@@ -10,14 +10,14 @@ public class AddProductToCartTest extends openBrowser {
 
     @Test
 
-    public void  testSuccessfulAddProductToCart(){
+    public void testSuccessfulAddProductToCart() {
 
         ProductPage productPage = homePage.clickProductTitle();
 
         driver.findElement(productPage.addProductToCartButton).click();
 
         assertEquals(productPage.getProductAddedToCartSuccessText(),
-                 "You added Push It Messenger Bag to your shopping cart.",
+                "You added Push It Messenger Bag to your shopping cart.",
                 "Product Added To Cart Test Failed");
     }
 }
