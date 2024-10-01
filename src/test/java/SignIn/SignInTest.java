@@ -22,7 +22,7 @@ public class SignInTest extends openBrowser {
 
         HomePage homePage = signInPage.clickSignInButton();
 
-        // Thread.sleep(5000);
+
 
 
         assertEquals(homePage.getSIgnInSuccessText(),

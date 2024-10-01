@@ -22,6 +22,10 @@ public class HomePage {
     private By messengerBagHome = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/a/span/span/img");
 
 
+    private By showCartButton = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
+    private By proceedToCheckoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
+
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -70,6 +74,13 @@ public class HomePage {
 
         return new WishListPage(driver);
 
+    }
+
+
+    public CheckoutPage clickCartAndProceedToCheckoutButton() {
+        driver.findElement(showCartButton).click();
+        driver.findElement(proceedToCheckoutButton).click();
+        return new CheckoutPage(driver);
     }
 
 
