@@ -15,15 +15,10 @@ public class SignInTest extends openBrowser {
 
         SignInPage signInPage = homePage.clickSignInButton();
 
-
         signInPage.setEmail("exampl@example.com");
         signInPage.setPassword("Password.1234");
 
-
         HomePage homePage = signInPage.clickSignInButton();
-
-
-
 
         assertEquals(homePage.getSIgnInSuccessText(),
                 "Welcome, firstname lastname!",

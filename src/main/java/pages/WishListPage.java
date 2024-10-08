@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class WishListPage {
 
-    public By productAddedToWishListSuccessTest = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
+    public By productAddedToWishListSuccessText = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
     private WebDriver driver;
 
 
@@ -21,8 +21,8 @@ public class WishListPage {
 
         //Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(productAddedToWishListSuccessTest, "Fusion Backpack has been added to your Wish List. Click here to continue shopping."));
-        return driver.findElement(productAddedToWishListSuccessTest).getText();
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(productAddedToWishListSuccessText, "Fusion Backpack has been added to your Wish List. Click here to continue shopping."));
+        return driver.findElement(productAddedToWishListSuccessText).getText();
 
 
     }

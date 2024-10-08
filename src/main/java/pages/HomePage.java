@@ -44,7 +44,7 @@ public class HomePage {
     public String getSIgnInSuccessText() {
 
         //Wait
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]"), "Welcome, firstname lastname!"));
         return driver.findElement(signInSUccessMessage).getText();
     }
@@ -78,7 +78,16 @@ public class HomePage {
 
 
     public CheckoutPage clickCartAndProceedToCheckoutButton() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(showCartButton));
+
+
         driver.findElement(showCartButton).click();
+
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait1.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButton));
+
         driver.findElement(proceedToCheckoutButton).click();
         return new CheckoutPage(driver);
     }
