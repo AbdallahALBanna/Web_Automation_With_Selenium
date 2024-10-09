@@ -8,22 +8,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
 
-    private By createAccountButton = By.linkText("Create an Account");
-    private By signInButton = By.linkText("Sign In");
-    private By signInSUccessMessage = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
-    private By searchTextBox = By.id("search");
+    private final By createAccountButton = By.linkText("Create an Account");
+    private final By signInButton = By.linkText("Sign In");
+    private final By signInSUccessMessage = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
+    private final By searchTextBox = By.id("search");
 
-    private By productAtHomeElement = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[6]/div/div/strong/a");
-
-
-    private By messengerBagHome = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/a/span/span/img");
+    private final By productAtHomeElement = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[6]/div/div/strong/a");
 
 
-    private By showCartButton = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
-    private By proceedToCheckoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
+    private final By messengerBagHome = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/a/span/span/img");
+
+
+    private final By showCartButton = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
+    private final By proceedToCheckoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
 
 
     public HomePage(WebDriver driver) {

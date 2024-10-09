@@ -10,19 +10,14 @@ import java.time.Duration;
 public class ReviewAndPaymentPage {
 
     private final WebDriver driver;
-
-    public ReviewAndPaymentPage(WebDriver driver)
-    {
-        this.driver=driver;
-    }
-
     private final By reviewAndPaymentButton = By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button");
-
     private final By palceOrderButton = By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button");
     private final By loader = By.xpath("/html/body/div[1]/div/img");
+    public ReviewAndPaymentPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-
-    public ThankYouforPurchasePage clickReviewAndPaymentButton(){
+    public ThankYouforPurchasePage clickReviewAndPaymentButton() {
         driver.findElement(reviewAndPaymentButton).click();
         return new ThankYouforPurchasePage(driver);
 

@@ -5,15 +5,15 @@ import org.openqa.selenium.WebDriver;
 
 public class CreateAccountPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    private By firstNameField = By.id("firstname");
-    private By lastNameField = By.id("lastname");
-    private By emailField = By.id("email_address");
-    private By passwordField = By.id("password");
-    private By confirmPasswordField = By.id("password-confirmation");
+    private final By firstNameField = By.id("firstname");
+    private final By lastNameField = By.id("lastname");
+    private final By emailField = By.id("email_address");
+    private final By passwordField = By.id("password");
+    private final By confirmPasswordField = By.id("password-confirmation");
 
-    private By createAccountButton = By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button");
+    private final By createAccountButton = By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button");
 
 
     public CreateAccountPage(WebDriver driver) {

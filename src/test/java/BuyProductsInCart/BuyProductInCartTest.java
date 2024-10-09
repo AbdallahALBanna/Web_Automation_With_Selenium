@@ -1,25 +1,15 @@
 package BuyProductsInCart;
 
 import basics.openBrowser;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import pages.ReviewAndPaymentPage;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static org.testng.Assert.assertEquals;
 
 public class BuyProductInCartTest extends openBrowser {
-
-
-
 
 
     @Test(priority = 1)
@@ -40,7 +30,6 @@ public class BuyProductInCartTest extends openBrowser {
     }
 
 
-
     @Test(priority = 2)
     public void testSuccessfulBuyProductInCart() throws InterruptedException, IOException {
         CheckoutPage checkoutPage = homePage.clickCartAndProceedToCheckoutButton();
@@ -48,10 +37,9 @@ public class BuyProductInCartTest extends openBrowser {
         ReviewAndPaymentPage reviewAndPaymentPage = checkoutPage.clickNextButton();
 
 
-
         ThankYouforPurchasePage thankYouforPurchasePage = reviewAndPaymentPage.clickPlaceOrderButton();
 
-        String expextedOutputMessage ="Thank you for your purchase!";
+        String expextedOutputMessage = "Thank you for your purchase!";
         String actualOutputMessage = thankYouforPurchasePage.getPurchaseSuccessMessage();
         assertEquals(actualOutputMessage,
                 expextedOutputMessage,
@@ -69,12 +57,7 @@ public class BuyProductInCartTest extends openBrowser {
             throw e;  // Rethrow the exception to mark the test as failed
         }
 
-   }
-
-
-
-
-
+    }
 
 
     //    @Test(priority = 2)
@@ -93,11 +76,6 @@ public class BuyProductInCartTest extends openBrowser {
 //        Thread.sleep(10000);
 //        ReviewAndPaymentPage reviewAndPaymentPage = checkoutPage.clickNextButton();
 //        reviewAndPaymentPage.clickReviewAndPaymentButton();
-
-
-
-
-
 
 
 }

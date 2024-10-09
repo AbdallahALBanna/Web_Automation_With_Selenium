@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class SignInPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    private By emailField = By.id("email");
-    private By passwordField = By.id("pass");
+    private final By emailField = By.id("email");
+    private final By passwordField = By.id("pass");
 
-    private By signInButton = By.id("send2");
+    private final By signInButton = By.id("send2");
 
 
     public SignInPage(WebDriver driver) {

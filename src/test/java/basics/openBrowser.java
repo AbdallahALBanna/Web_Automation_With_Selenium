@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
@@ -21,7 +20,6 @@ public class openBrowser {
 
     protected static WebDriver driver = new ChromeDriver();
     protected HomePage homePage;
-
 
 
     // Helper method to take a screenshot, with test result (Pass/Fail) as an additional argument
@@ -54,16 +52,6 @@ public class openBrowser {
     }
 
 
-
-
-
-
-
-
-
-
-
-
     @BeforeClass
     public void setUp() {
 
@@ -89,16 +77,10 @@ public class openBrowser {
 //    }
 
 
-
-
-
-
-
     @AfterClass
     public void tearDown() {
         // driver.quit();
     }
-
 
 
 }

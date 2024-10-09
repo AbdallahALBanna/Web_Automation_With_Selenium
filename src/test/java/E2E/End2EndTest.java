@@ -9,8 +9,6 @@ import static org.testng.Assert.assertEquals;
 public class End2EndTest extends openBrowser {
 
 
-
-
     @Test(priority = 1)
     public void testSuccessfulSignIn() throws InterruptedException {
 
@@ -22,8 +20,6 @@ public class End2EndTest extends openBrowser {
 
 
         HomePage homePage = signInPage.clickSignInButton();
-
-
 
 
         assertEquals(homePage.getSIgnInSuccessText(),
@@ -63,8 +59,7 @@ public class End2EndTest extends openBrowser {
     }
 
 
-
-    @Test (enabled = false)
+    @Test(enabled = false)
 
     public void testSuccessfulAddProductToWishList() {
 
@@ -82,10 +77,6 @@ public class End2EndTest extends openBrowser {
         assertEquals(wishListPage.getProductAddedToWishListSuccessText(), "Fusion Backpack has been added to your Wish List. Click here to continue shopping.", "Wish List Test Fail");
 
     }
-
-
-
-
 
 
 }
