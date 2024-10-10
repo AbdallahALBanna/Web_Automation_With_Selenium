@@ -9,8 +9,8 @@ import java.time.Duration;
 
 public class ThankYouforPurchasePage {
 
-    public By purchaseSuccessMessage = By.xpath("//*[@id=\"maincontent\"]/div[1]/h1/span");
     private final WebDriver driver;
+    public By purchaseSuccessMessage = By.xpath("//*[@id=\"maincontent\"]/div[1]/h1/span");
 
     public ThankYouforPurchasePage(WebDriver driver) {
         this.driver = driver;

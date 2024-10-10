@@ -9,9 +9,9 @@ import java.time.Duration;
 
 public class ProductPage {
 
+    private final WebDriver driver;
     public By addProductToCartButton = By.id("product-addtocart-button");
     public By productAddedToCartSuccessText = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
-    private final WebDriver driver;
 
 
     public ProductPage(WebDriver driver) {

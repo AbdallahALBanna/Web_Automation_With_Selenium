@@ -4,9 +4,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.io.File;
@@ -17,70 +19,74 @@ import java.util.Date;
 
 public class openBrowser {
 
-
-    protected static WebDriver driver = new ChromeDriver();
+    protected static WebDriver driver;
     protected HomePage homePage;
 
 
-    // Helper method to take a screenshot, with test result (Pass/Fail) as an additional argument
-    public void takeScreenshot(String testName, String result) throws IOException {
-        // Get the current date and time to make the filename unique
-        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    // Helper method to take a screenshot
+    public void takeScreenshot(String testName, String result) {
+        try {
+            String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            TakesScreenshot scrShot = ((TakesScreenshot) driver);
+            File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+            String destinationDir = "src/test/ScreenShots/" + result + "/";
+            File dir = new File(destinationDir);
 
-        // Convert web driver object to TakeScreenshot
-        TakesScreenshot scrShot = ((TakesScreenshot) driver);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
 
-        // Call getScreenshotAs method to create an image file
-        File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-
-        // Define the destination directory based on result (Pass/Fail)
-        String destinationDir = "src/test/ScreenShots/" + result + "/";
-        File dir = new File(destinationDir);
-
-        // Check if directory exists, create it if not
-        if (!dir.exists()) {
-            dir.mkdirs(); // Creates all non-existent parent directories
+            String destinationPath = destinationDir + testName + "_" + timestamp + ".png";
+            FileHandler.copy(srcFile, new File(destinationPath));
+            System.out.println("Screenshot saved at: " + destinationPath);
+        } catch (IOException e) {
+            System.err.println("Failed to capture screenshot: " + e.getMessage());
         }
-
-        // Define the full path for the screenshot file
-        String destinationPath = destinationDir + testName + "_" + timestamp + ".png";
-
-        // Move the file to the destination
-        FileHandler.copy(srcFile, new File(destinationPath));
-
-        System.out.println("Screenshot saved at: " + destinationPath);
     }
-
 
     @BeforeClass
     public void setUp() {
+        // To add Extension to Chrome Automated Browser
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("src/Stands AdBlocker - Chrome Web Store 2.1.24.0.crx"));
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         driver.get("https://magento.softwaretestingboard.com/");
         homePage = new HomePage(driver);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        // Wait for the new tab to open
+        String originalTab = driver.getWindowHandle(); // Store the original tab handle
+        for (String tab : driver.getWindowHandles()) {
+            if (!tab.equals(originalTab)) {
+                driver.switchTo().window(tab); // Switch to the new tab
+                break;
+            }
+        }
 
-//
-//        WebElement createAcountButton = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a"));
-//        createAcountButton.click();
-//        System.out.println((driver.getTitle()));
-        //  driver.quit();
+        // Close the new tab
+        driver.close();
+
+        // Switch back to the original tab
+        driver.switchTo().window(originalTab);
 
     }
 
+    @BeforeMethod
+    public void goHome() {
+        driver.get("https://magento.softwaretestingboard.com/");
 
-//    @AfterMethod
-//    public void goHome() throws InterruptedException {
-//        driver.get("https://magento.softwaretestingboard.com/");
-//        Thread.sleep(5000);
+    }
+
+//    @AfterClass
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//            System.out.println("Browser closed successfully.");
+//        }
 //    }
 
-
-    @AfterClass
-    public void tearDown() {
-        // driver.quit();
-    }
 
 
 }

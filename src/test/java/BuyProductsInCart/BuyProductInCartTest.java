@@ -60,22 +60,22 @@ public class BuyProductInCartTest extends openBrowser {
     }
 
 
-    //    @Test(priority = 2)
-//
-//
-//    public void testSuccessfulBuyProductInCart() throws InterruptedException {
-//        CheckoutPage checkoutPage = homePage.clickCartAndProceedToCheckoutButton();
-//Thread.sleep(10000);
-//        checkoutPage.setStreetAddress("Abdallah Albanna st. Alexandria ");
-//        checkoutPage.setCity("Alexandria");
-//        checkoutPage.setState();
-//        checkoutPage.setPostalCode("12345");
-//        checkoutPage.setPhoneNumber("0123456789");
-//        checkoutPage.clickTopRatedShippingRadioButton();
-//        checkoutPage.clickNextButton();
-//        Thread.sleep(10000);
-//        ReviewAndPaymentPage reviewAndPaymentPage = checkoutPage.clickNextButton();
-//        reviewAndPaymentPage.clickReviewAndPaymentButton();
+        //    @Test(priority = 2)
+    //
+    //
+    //    public void testSuccessfulBuyProductInCart() throws InterruptedException {
+    //        CheckoutPage checkoutPage = homePage.clickCartAndProceedToCheckoutButton();
+    //Thread.sleep(10000);
+    //        checkoutPage.setStreetAddress("Abdallah Albanna st. Alexandria ");
+    //        checkoutPage.setCity("Alexandria");
+    //        checkoutPage.setState();
+    //        checkoutPage.setPostalCode("12345");
+    //        checkoutPage.setPhoneNumber("0123456789");
+    //        checkoutPage.clickTopRatedShippingRadioButton();
+    //        checkoutPage.clickNextButton();
+    //        Thread.sleep(10000);
+    //        ReviewAndPaymentPage reviewAndPaymentPage = checkoutPage.clickNextButton();
+    //        reviewAndPaymentPage.clickReviewAndPaymentButton();
 
 
 }

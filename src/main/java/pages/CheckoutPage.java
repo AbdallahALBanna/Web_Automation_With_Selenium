@@ -17,6 +17,7 @@ public class CheckoutPage {
     private final By phoneNumberField = By.name("telephone");
     private final By topRatedShippingRadioButton = By.name("ko_unique_1");
     private final By nextButton = By.xpath("//*[@id=\"shipping-method-buttons-container\"]/div/button");
+
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
     }

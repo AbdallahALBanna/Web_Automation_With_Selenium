@@ -10,18 +10,21 @@ import static org.testng.Assert.assertEquals;
 public class SignInTest extends openBrowser {
 
 
-    @Test
-    public void testSuccessfulSignIn() throws InterruptedException {
+    @Test(dataProvider = "sginInExcelDataProvider", dataProviderClass = SignInExcelDataProvider.class)
+    public void testSuccessfulSignIn(String firstname, String lastname, String email, String password) {
 
         SignInPage signInPage = homePage.clickSignInButton();
 
-        signInPage.setEmail("exampl@example.com");
-        signInPage.setPassword("Password.1234");
+//        signInPage.setEmail("exampl@example.com");
+//        signInPage.setPassword("Password.1234");
+
+        signInPage.setEmail(email);
+        signInPage.setPassword(password);
 
         HomePage homePage = signInPage.clickSignInButton();
 
         assertEquals(homePage.getSIgnInSuccessText(),
-                "Welcome, firstname lastname!",
+                "Welcome, " + firstname + " " + lastname + "!",
                 "Sign In Tst Failed");
 
 

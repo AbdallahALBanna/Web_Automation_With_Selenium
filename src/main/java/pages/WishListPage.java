@@ -9,8 +9,8 @@ import java.time.Duration;
 
 public class WishListPage {
 
-    public By productAddedToWishListSuccessText = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
     private final WebDriver driver;
+    public By productAddedToWishListSuccessText = By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
 
 
     public WishListPage(WebDriver driver) {

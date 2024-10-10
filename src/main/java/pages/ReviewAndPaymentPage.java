@@ -13,6 +13,7 @@ public class ReviewAndPaymentPage {
     private final By reviewAndPaymentButton = By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button");
     private final By palceOrderButton = By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button");
     private final By loader = By.xpath("/html/body/div[1]/div/img");
+
     public ReviewAndPaymentPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -29,9 +30,7 @@ public class ReviewAndPaymentPage {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.attributeToBe(By.tagName("body"), "aria-busy", "false"));
-//
-//        //wait.until(ExpectedConditions.elementToBeClickable(palceOrderButton));
-//
+
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(50));
         wait1.until(ExpectedConditions.invisibilityOfElementLocated(loader));
 

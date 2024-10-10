@@ -25,6 +25,8 @@ public class HomePage {
     private final By showCartButton = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
     private final By proceedToCheckoutButton = By.xpath("//*[@id=\"top-cart-btn-checkout\"]");
 
+    public By adCloseButton = By.cssSelector("#dismiss-button");
+    public By adPositionBox = By.xpath("//*[@id=\"ad_position_box\"]");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -32,9 +34,11 @@ public class HomePage {
 
 
     public CreateAccountPage clickCreateAnAccountButton() {
+
         driver.findElement(createAccountButton).click();
-        return new CreateAccountPage(driver);
+        return new CreateAccountPage(driver); // Return the CreateAccountPage object
     }
+
 
     public SignInPage clickSignInButton() {
         driver.findElement(signInButton).click();
