@@ -4,9 +4,8 @@ import basics.openBrowser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateAccountPage;
+import pages.HomePage;
 import pages.MyAccountPage;
-
-import static org.testng.AssertJUnit.assertEquals;
 
 public class CreateAccountTest extends openBrowser {
 
@@ -23,13 +22,29 @@ public class CreateAccountTest extends openBrowser {
         createAccountPage.setPassword(password);
         createAccountPage.setConfirmPassword(password);
         MyAccountPage myAccountPage = createAccountPage.clickCreateAccountButton();
-        assertEquals(myAccountPage.getAccountSuccessText(),
-                "Thank you for registering with Main Website Store.",
-                "new account tst fail");
 
-        System.out.println("aasdaf"+myAccountPage.getAccountSuccessText());
+        //String outptSuccessMessage = myAccountPage.getAccountSuccessText();
+        String outputContactInfo = myAccountPage.getAccountContactInformation();
+
+        driver.navigate().refresh();
+
+//        System.out.println("outputContactInfo= "+ myAccountPage.getAccountContactInformation() );
+//        System.out.println("outputContactInf== "+firstname+" "+lastname+"\n"+email);
+
+        // System.out.println("outptSuccessMessage= "+myAccountPage.getAccountSuccessText());
+        //        Assert.assertEquals(outptSuccessMessage.trim(),
+        //                "Thank you for registering with Main Website Store.",
+        //                "new account tst fail");
+
+        Assert.assertEquals(outputContactInfo,
+                firstname + " " + lastname + "\n" + email,
+                "New account test failed");
+
+
         takeScreenshot("CreateAccount_" + email, "Pass");
 
+        myAccountPage.clickDropDownMenuButton();
+        HomePage homePage1 = myAccountPage.clickSignOutButton();
 
     }
 

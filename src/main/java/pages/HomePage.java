@@ -34,7 +34,8 @@ public class HomePage {
 
 
     public CreateAccountPage clickCreateAnAccountButton() {
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(createAccountButton));
         driver.findElement(createAccountButton).click();
         return new CreateAccountPage(driver); // Return the CreateAccountPage object
     }

@@ -60,7 +60,7 @@ public class BuyProductInCartTest extends openBrowser {
     }
 
 
-        //    @Test(priority = 2)
+    //    @Test(priority = 2)
     //
     //
     //    public void testSuccessfulBuyProductInCart() throws InterruptedException {

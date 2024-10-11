@@ -27,8 +27,6 @@ public class SignInPage {
 
     public HomePage clickSignInButton() {
         driver.findElement(signInButton).click();
-
-
         return new HomePage(driver);
     }
 

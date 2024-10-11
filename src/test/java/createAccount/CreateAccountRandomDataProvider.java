@@ -1,5 +1,3 @@
-
-
 package createAccount;
 
 import com.github.javafaker.Faker;
@@ -11,7 +9,7 @@ public class CreateAccountRandomDataProvider {
 
     public static Object[][] randomUserdataCreator() {
         Faker faker = new Faker();
-        int numbOfAccounts = 1;
+        int numbOfAccounts = 5;
         Object[][] createAccountUserData = new Object[numbOfAccounts][4];
 
         for (int i = 0; i < numbOfAccounts; i++) {
