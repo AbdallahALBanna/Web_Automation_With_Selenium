@@ -84,13 +84,13 @@ public class HomePage {
 
     public CheckoutPage clickCartAndProceedToCheckoutButton() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(showCartButton));
 
 
         driver.findElement(showCartButton).click();
 
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait1.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButton));
 
         driver.findElement(proceedToCheckoutButton).click();

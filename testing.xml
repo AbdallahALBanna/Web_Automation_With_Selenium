@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AllTestsSuite" parallel="false">
+
+
+    <test name="CreateAccount">
+        <classes>
+            <class name="createAccount.CreateAccountTest"/>
+        </classes>
+    </test>
+
+    <test name="SignIn">
+        <classes>
+            <class name="SignIn.SignInTest"/>
+        </classes>
+    </test>
+
+    <test name="SearchProduct">
+        <classes>
+            <class name="SearchProduct.SearchProductTest"/>
+        </classes>
+    </test>
+
+
+    <test name="AddToWishList">
+        <classes>
+            <class name="AddToWishList.AddProductToWishListTest"/>
+        </classes>
+    </test>
+
+    <test name="AddProductToCart">
+        <classes>
+            <class name="AddProductToCart.AddProductToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="BuyProductsInCart">
+        <classes>
+            <class name="BuyProductsInCart.BuyProductInCartTest"/>
+        </classes>
+    </test>
+
+
+    <test name="E2E">
+        <classes>
+            <class name="E2E.End2EndTest"/>
+        </classes>
+    </test>
+
+
+</suite>
