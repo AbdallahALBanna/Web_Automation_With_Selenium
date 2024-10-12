@@ -19,33 +19,11 @@ import java.util.Date;
 
 public class openBrowser {
 
-    protected static WebDriver driver;
-    protected HomePage homePage;
-
-
-    // Helper method to take a screenshot
-    public void takeScreenshot(String testName, String result) {
-        try {
-            String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-            TakesScreenshot scrShot = ((TakesScreenshot) driver);
-            File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-            String destinationDir = "src/test/ScreenShots/" + result + "/";
-            File dir = new File(destinationDir);
-
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
-
-            String destinationPath = destinationDir + testName + "_" + timestamp + ".png";
-            FileHandler.copy(srcFile, new File(destinationPath));
-            System.out.println("Screenshot saved at: " + destinationPath);
-        } catch (IOException e) {
-            System.err.println("Failed to capture screenshot: " + e.getMessage());
-        }
-    }
+    public static WebDriver driver;
+    public static HomePage homePage;
 
     @BeforeClass
-    public void setUp() {
+    public static void setUp() {
         // To add Extension to Chrome Automated Browser
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(new File("src/Stands AdBlocker - Chrome Web Store 2.1.24.0.crx"));
@@ -71,6 +49,27 @@ public class openBrowser {
         // Switch back to the original tab
         driver.switchTo().window(originalTab);
 
+    }
+
+    // Helper method to take a screenshot
+    public void takeScreenshot(String testName, String result) {
+        try {
+            String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            TakesScreenshot scrShot = ((TakesScreenshot) driver);
+            File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+            String destinationDir = "src/test/ScreenShots/" + result + "/";
+            File dir = new File(destinationDir);
+
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            String destinationPath = destinationDir + testName + "_" + timestamp + ".png";
+            FileHandler.copy(srcFile, new File(destinationPath));
+            System.out.println("Screenshot saved at: " + destinationPath);
+        } catch (IOException e) {
+            System.err.println("Failed to capture screenshot: " + e.getMessage());
+        }
     }
 
     @BeforeMethod

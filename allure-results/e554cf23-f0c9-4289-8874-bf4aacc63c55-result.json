@@ -1,0 +1,70 @@
+{
+  "uuid": "e554cf23-f0c9-4289-8874-bf4aacc63c55",
+  "historyId": "9761f4be6e19a34fef1fa514f8982af2",
+  "fullName": "io.cucumber.testng.AbstractTestNGCucumberTests.runScenario",
+  "labels": [
+    {
+      "name": "package",
+      "value": "SearchProductBDD.Runner"
+    },
+    {
+      "name": "testClass",
+      "value": "SearchProductBDD.Runner"
+    },
+    {
+      "name": "testMethod",
+      "value": "runScenario"
+    },
+    {
+      "name": "parentSuite",
+      "value": "Default Suite"
+    },
+    {
+      "name": "suite",
+      "value": "Web_Automation_With_Selenium"
+    },
+    {
+      "name": "subSuite",
+      "value": "SearchProductBDD.Runner"
+    },
+    {
+      "name": "host",
+      "value": "Banna_Pc"
+    },
+    {
+      "name": "thread",
+      "value": "34492@Banna_Pc.main(1)"
+    },
+    {
+      "name": "framework",
+      "value": "testng"
+    },
+    {
+      "name": "language",
+      "value": "java"
+    }
+  ],
+  "links": [],
+  "name": "Runs Cucumber Scenarios",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "arg1",
+      "value": "\"Successful Product Search Feature\""
+    },
+    {
+      "name": "arg0",
+      "value": "\"Successful Product Search\""
+    }
+  ],
+  "start": 1728746387371,
+  "stop": 1728746387420
+}
