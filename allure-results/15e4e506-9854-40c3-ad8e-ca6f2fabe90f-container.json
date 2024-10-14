@@ -1,1 +1,0 @@
-{"uuid":"15e4e506-9854-40c3-ad8e-ca6f2fabe90f","name":"basics.openBrowser.goHome","children":["6e009eaa-013e-4115-8c57-cef560dfd2c8"],"description":"","befores":[{"name":"goHome","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1728759888226,"stop":1728759888833}],"afters":[],"start":1728759888226,"stop":1728759888833}
